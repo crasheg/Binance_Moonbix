@@ -41,11 +41,11 @@ function clickTaskTab() {
     });
 
     if (taskTab) {
-        console.log('Tab Nhiệm vụ được tìm thấy, đang click...');
+        console.log('Task tab found, clicking...');
         taskTab.click(); 
         return true;
     } else {
-        console.log('Không tìm thấy tab Nhiệm vụ.');
+        console.log('Tasks tab not found.');
         return false;
     }
 }
@@ -56,7 +56,7 @@ function clickIncompleteTask() {
     for (const task of tasks) {
         const checkIcon = task.querySelector('img[src*="check.png"]');
         if (!checkIcon) {
-            console.log('Nhiệm vụ chưa hoàn thành được tìm thấy, đang click...');
+            console.log('Unfinished task found, clicking...');
             task.click(); // Thực hiện click vào nhiệm vụ chưa hoàn thành
             foundIncompleteTask = true;
             break;
@@ -68,11 +68,11 @@ function clickIncompleteTask() {
 function clickContinueButton() {
     const continueButton = document.querySelector('.DailyLogin_login__button__15aOK');
     if (continueButton) {
-        console.log('Nút "Tiếp tục" được tìm thấy, đang click...');
+        console.log('The "Continue" button is found, clicking...');
         continueButton.click(); // Thực hiện click vào nút "Tiếp tục"
         return true;
     } else {
-        console.log('Không tìm thấy nút "Tiếp tục".');
+        console.log('"Continue" button not found.');
         return false;
     }
 }
@@ -89,7 +89,7 @@ window.addEventListener('load', function() {
                     const found = clickIncompleteTask();
                     if (!found) {
                         clearInterval(taskInterval);
-                        console.log('Không tìm thấy nhiệm vụ chưa hoàn thành nào nữa.');
+                        console.log('No more unfinished quests found.');
                     }
                 }, 1000);
             }
